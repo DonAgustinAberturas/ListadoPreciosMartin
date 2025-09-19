@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Precios</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="company-header">
+            <div class="logo-section">
+                <div class="logo">
+                    <img src="Logos/logo.png" alt="Logo Don Agustin" class="logo-main">
+                </div>
+                <div class="company-info">
+                    <div class="company-name-section">
+                        <h1 class="company-name">DON AGUSTÍN</h1>
+                    </div>
+                    <p class="company-description">ABERTURAS DE ALUMINIO</p>
+                </div>
+            </div>
+            <div class="location-info">
+                <p>ACCESO RUTA Nº 32 - PARQUE INDUSTRIAL HASENKAMP</p>
+            </div>
+            <div class="document-info">
+                <h2>LISTA DE PRECIOS Nº 4 - SEPTIEMBRE 2025</h2>
+                <p>LOS PRECIOS NO INCLUYEN IVA NI SERVICIO DE ENTREGA</p>
+                <p>CONSULTAR MEDIDAS ESPECIALES</p>
+            </div>
+        </header>
+
+        <main>
+            <div class="tabs">
+                <button class="tab-button active" data-tab="ventanas">Ventanas</button>
+                <button class="tab-button" data-tab="mosquiteros">Mosquiteros</button>
+                <button class="tab-button" data-tab="rajas">Rajas</button>
+                <button class="tab-button" data-tab="rejas">Rejas</button>
+                <button class="tab-button" data-tab="aireadores">Aireadores</button>
+                <button class="tab-button" data-tab="puertas">Puertas</button>
+                <button class="tab-button" data-tab="especiales">Ofertas Especiales</button>
+            </div>
+
+            <div class="tab-content">
+                <div id="ventanas" class="tab-pane active">
+                    <div class="filters">
+                        <button class="filter-button" data-filter="Ventanas Corredizas Simples (Alum Blanco) Vidrio Entero">Corredizas Simples (Alum Blanco) Vidrio Entero</button>
+                        <button class="filter-button" data-filter="Ventanas Corredizas Simples (Alum Blanco) Vidrio Repartido">Corredizas Simples (Alum Blanco) Vidrio Repartido</button>
+                        <button class="filter-button" data-filter="Ventanas con Celosías Corredizas (Aplique Color Blanco)">Con Celosías Corredizas (Aplique Color Blanco)</button>
+                        <button class="filter-button" data-filter="Ventanas Vidrio Entero con Celosía Corrediza (Color Blanco)">Con Celosías Corredizas (Alum Blanco) Vidrio Entero</button>
+                    </div>
+                    <div class="loading">Cargando ventanas...</div>
+                    <div class="table-container"></div>
+                </div>
+
+                <div id="mosquiteros" class="tab-pane">
+                    <div class="filters">
+                        <button class="filter-button" data-filter="Mosquiteros">Mosquiteros</button>
+                    </div>
+                    <div class="loading">Cargando mosquiteros...</div>
+                    <div class="table-container"></div>
+                </div>
+
+                <div id="rajas" class="tab-pane">
+                    <div class="filters">
+                        <button class="filter-button" data-filter="Rajas Vidrio Entero">Vidrio Entero</button>
+                        <button class="filter-button" data-filter="Rajas Vidrio Repartido">Vidrio Repartido</button>
+                    </div>
+                    <div class="loading">Cargando rajas...</div>
+                    <div class="table-container"></div>
+                </div>
+
+                <div id="rejas" class="tab-pane">
+                    <div class="filters">
+                        <button class="filter-button" data-filter="Rejas de Hierro Macizo Nº 10 (Color Negro)">De Hierro Macizo Nº 10 (Color Negro)</button>
+                    </div>
+                    <div class="loading">Cargando rejas...</div>
+                    <div class="table-container"></div>
+                </div>
+
+                <div id="aireadores" class="tab-pane">
+                    <div class="filters">
+                        <button class="filter-button" data-filter="Aireadores Aluminio">Aireadores Aluminio</button>
+                    </div>
+                    <div class="loading">Cargando aireadores...</div>
+                    <div class="table-container"></div>
+                </div>
+
+                <div id="puertas" class="tab-pane">
+                    <div class="filters">
+                        <button class="filter-button" data-filter="Puerta Aluminio Tablero Acanalado 25mm">Aluminio Tablero Acanalado 25mm</button>
+                        <button class="filter-button" data-filter="Puerta Aluminio Tablero Tubular 36mm">Aluminio Tablero Tubular 36mm</button>
+                        <button class="filter-button" data-filter="Puerta Aluminio Mosquitera">Aluminio Mosquitera</button>
+                    </div>
+                    <div class="loading">Cargando puertas...</div>
+                    <div class="table-container"></div>
+                </div>
+
+                <div id="especiales" class="tab-pane">
+                    <div id="especiales-contenido" class="especiales-contenido" style="padding: 30px; text-align: center; font-size: 1.2rem; color: #DC3545;">
+                        <!-- Aquí se mostrará el texto de especiales.txt -->
+                        <span class="loading">Cargando ofertas especiales...</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Listado de Precios. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+    <!-- Modal para mostrar imágenes de productos -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <img id="modalImage" src="" alt="Imagen del producto">
+                </div>
+                <div class="modal-info">
+                    <h3 id="modalTitle"></h3>
+                    <p id="modalDescription"></p>
+                    <p id="modalPrice"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script type="module" src="js/main.js"></script>
+    <script>
+    // Mostrar el texto de especiales.txt en la pestaña de ofertas especiales
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('especiales.txt')
+            .then(response => response.text())
+            .then(texto => {
+                const contenedor = document.getElementById('especiales-contenido');
+                // Envolver el texto en <b> para que todo el contenido esté en negrita
+                contenedor.innerHTML = '<b>' + texto.replace(/\n/g, '<br>') + '</b>';
+            })
+            .catch(() => {
+                const contenedor = document.getElementById('especiales-contenido');
+                contenedor.innerHTML = "<b>No se pudieron cargar las ofertas especiales.</b>";
+            });
+    });
+    </script>
+</body>
+</html> 
